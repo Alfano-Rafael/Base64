@@ -1,0 +1,18 @@
+//---------------------------------------------------------------------------
+
+#ifndef Base64H
+#define Base64H
+
+class Base64{
+	public:
+		Base64();
+		void AfficherTable();
+		void AfficherBinaire(int entier, int nbBits);
+		void Code3OctetsBase64(unsigned char* donnée, char*code);
+		void InitialiserTable();
+    private:
+		int tableBase64[65];
+};
+//---------------------------------------------------------------------------
+#endif
+
