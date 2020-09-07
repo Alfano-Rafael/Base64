@@ -103,7 +103,6 @@ int  Base64::IndiceCaractereBase64(char c){
 
 
 
-
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 

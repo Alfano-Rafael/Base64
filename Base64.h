@@ -8,9 +8,10 @@ class Base64{
 		Base64();
 		void AfficherTable();
 		void AfficherBinaire(int entier, int nbBits);
-		void Code3OctetsBase64(unsigned char* donnée, char*code);
+		void Code3OctetsBase64(unsigned char* donnee, char*code);
 		void InitialiserTable();
-    private:
+		int IndiceCaractereBase64(char c);
+	private:
 		int tableBase64[65];
 };
 //---------------------------------------------------------------------------

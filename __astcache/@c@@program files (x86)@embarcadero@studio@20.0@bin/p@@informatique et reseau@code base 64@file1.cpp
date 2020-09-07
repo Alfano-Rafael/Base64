@@ -14,10 +14,15 @@
 
 using namespace std;
 
-int _tmain(int argc, _TCHAR* argv[]) 
+int _tmain(int argc, _TCHAR* argv[])
 {
 	 Base64 monCrypt;
 	 monCrypt.InitialiserTable();
-	 monCrypt.AfficherTable();
+	 //monCrypt.AfficherTable();
+//	 char* code;
+//	 unsigned char donnee[3]={0xff, 0xd8, 0x26};
+//	 monCrypt.Code3OctetsBase64(donnee, code);
+	 cout<<monCrypt.IndiceCaractereBase64('v');
+
 	 cin.get();
 }
