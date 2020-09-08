@@ -1,0 +1,32 @@
+#pragma hdrstop
+#pragma argsused
+
+#ifdef _WIN32
+#include <tchar.h>
+#else
+  typedef char _TCHAR;
+  #define _tmain main
+#endif
+
+#include <stdio.h>
+#include <iostream>
+#include "Base64.h"
+
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	 unsigned char* donnee;
+	 char* code;
+	 code = {"47E7"};
+	 Base64 monCrypt;
+	 monCrypt.InitialiserTable();
+	 //monCrypt.AfficherTable();
+//	 char* code;
+//	 unsigned char donnee[3]={0xff, 0xd8, 0x26};
+//	 monCrypt.Code3OctetsBase64(donnee, code);
+//	 cout<<monCrypt.IndiceCaractereBase64('v');
+	 monCrypt.Decode4caracteresBase64(donnee, code);
+     //cout<< donnee;
+	 cin.get();
+}

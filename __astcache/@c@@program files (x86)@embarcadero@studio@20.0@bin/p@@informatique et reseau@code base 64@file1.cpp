@@ -16,13 +16,11 @@ using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	 int nbOctetDonnee=4;
+	 unsigned char donnee[nbOctetDonnee];
+	 char code[5] = {'4','7','E','7', '8};
 	 Base64 monCrypt;
 	 monCrypt.InitialiserTable();
-	 //monCrypt.AfficherTable();
-//	 char* code;
-//	 unsigned char donnee[3]={0xff, 0xd8, 0x26};
-//	 monCrypt.Code3OctetsBase64(donnee, code);
-	 cout<<monCrypt.IndiceCaractereBase64('v');
-
+	 monCrypt.CodeNoctetsBase64(donnee, nbOctetDonnee, code) ;
 	 cin.get();
 }

@@ -122,23 +122,10 @@ void Base64::CodeNoctetsBase64(unsigned char* donnee, int nbOctetsDonnees, char*
 	//recuperer le nombre de bits retants apres le modulo de 3 octets
 	cout << resteEnFinDeSequence;
 
-	if (resteEnFinDeSequence == 16) {
-		donnee[nbOctetsDonnees] = 0;
-		nbOctetsDonnees++;
-	}
-	if (resteEnFinDeSequence == 8) {
-		donnee[nbOctetsDonnees] = 0;
-        nbOctetsDonnees++;
-		donnee[nbOctetsDonnees] = 0;
-		nbOctetsDonnees++;
-	}
+	Code3OctetsBase64();
 
-	int j =0;
-
-	for (int i = 0; i <= nbOctetsDonnees ; i+=3) {
-		Code3OctetsBase64(donnee+i, code+j);
-		j+=4;
-	}
+	if (resteEnFinDeSequence == 8) {cout<<"==";}
+    if (resteEnFinDeSequence == 8) {cout<<"=";}
 
 
 

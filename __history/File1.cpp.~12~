@@ -14,13 +14,10 @@
 
 using namespace std;
 
-int _tmain(int argc, _TCHAR* argv[])
+int _tmain(int argc, _TCHAR* argv[]) 
 {
-	 int nbOctetDonnee=4;
-	 unsigned char donnee[nbOctetDonnee];
-	 char code[5] = {'4','7','E','7', '8'};
 	 Base64 monCrypt;
 	 monCrypt.InitialiserTable();
-	 monCrypt.CodeNoctetsBase64(donnee, nbOctetDonnee, code) ;
+	 monCrypt.AfficherTable();
 	 cin.get();
 }

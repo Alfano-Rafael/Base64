@@ -102,7 +102,6 @@ int  Base64::IndiceCaractereBase64(char c){
 void Base64::Decode4caracteresBase64(unsigned char* donnee, char* code){
 
 	int nb24bits;
-
 	nb24bits = (IndiceCaractereBase64(code[0])<<18)+ (IndiceCaractereBase64(code[1])<<12) + (IndiceCaractereBase64(code[2])<<6) +IndiceCaractereBase64(code[3]);
 	//AfficherBinaire(nb24bits, 24);
 
@@ -112,33 +111,11 @@ void Base64::Decode4caracteresBase64(unsigned char* donnee, char* code){
 	nb24bits = nb24bits>>=8;
 	donnee[0]= nb24bits & 0xff;
 
-	cout<<hex<<(int)donnee[0]<<" "<<(int)donnee[1]<<" "<<(int)donnee[2];
-
 }
 
 void Base64::CodeNoctetsBase64(unsigned char* donnee, int nbOctetsDonnees, char* code){
-
-	int resteEnFinDeSequence= (nbOctetsDonnees*8) %24 ;
-	//recuperer le nombre de bits retants apres le modulo de 3 octets
+	int resteEnFinDeSequence= nbOctetsDonnees %3 ;
 	cout << resteEnFinDeSequence;
-
-	if (resteEnFinDeSequence == 16) {
-		donnee[nbOctetsDonnees] = 0;
-		nbOctetsDonnees++;
-	}
-	if (resteEnFinDeSequence == 8) {
-		donnee[nbOctetsDonnees] = 0;
-        nbOctetsDonnees++;
-		donnee[nbOctetsDonnees] = 0;
-		nbOctetsDonnees++;
-	}
-
-	int j =0;
-
-	for (int i = 0; i <= nbOctetsDonnees ; i+=3) {
-		Code3OctetsBase64(donnee+i, code+j);
-		j+=4;
-	}
 
 
 
