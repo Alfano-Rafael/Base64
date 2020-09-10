@@ -1,0 +1,28 @@
+#pragma hdrstop
+#pragma argsused
+
+#ifdef _WIN32
+#include <tchar.h>
+#else
+  typedef char _TCHAR;
+  #define _tmain main
+#endif
+
+#include <stdio.h>
+#include <iostream>
+#include "Base64.h"
+
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	 int nbOctetDonnee=5;
+	 unsigned char donnee[1500]={0xff,0xd8,0x26,0xb0,0x41,0x78};
+	 char code[5];
+	 Base64 monCrypt;
+	 monCrypt.InitialiserTable();
+	 monCrypt.CodeNoctetsBase64(donnee, nbOctetDonnee, code);
+	 cout<<code;
+
+	 cin.get();
+}

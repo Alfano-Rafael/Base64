@@ -3,11 +3,17 @@
 	<Transactions>
     <Transaction>2020/09/04 13:25:26.000.776,=C:\Users\ralfano\Documents\Embarcadero\Studio\Projets\File1.cpp</Transaction>
     <Transaction>2020/09/04 13:25:26.000.588,=C:\Users\ralfano\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
-    <Transaction>2020/09/04 13:26:13.000.468,P:\Informatique et reseau\Code base 64\File1.cpp=C:\Users\ralfano\Documents\Embarcadero\Studio\Projets\File1.cpp</Transaction>
-    <Transaction>2020/09/04 13:26:15.000.110,P:\Informatique et reseau\Code base 64\Project1PCH1.h=C:\Users\ralfano\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
-    <Transaction>2020/09/04 13:26:16.000.330,P:\Informatique et reseau\Code base 64\Project1.cbproj=C:\Users\ralfano\Documents\Embarcadero\Studio\Projets\Project1.cbproj</Transaction>
+    <Transaction>2020/09/04 13:26:13.000.468,C:\Users\ralfano\Documents\Embarcadero\Studio\Projets\File1.cpp=P:\Informatique et reseau\Code base 64\File1.cpp</Transaction>
+    <Transaction>2020/09/04 13:26:15.000.110,C:\Users\ralfano\Documents\Embarcadero\Studio\Projets\Project1PCH1.h=P:\Informatique et reseau\Code base 64\Project1PCH1.h</Transaction>
+    <Transaction>2020/09/04 13:26:16.000.330,C:\Users\ralfano\Documents\Embarcadero\Studio\Projets\Project1.cbproj=P:\Informatique et reseau\Code base 64\Project1.cbproj</Transaction>
     <Transaction>2020/09/04 15:31:43.000.263,=P:\Informatique et reseau\Code base 64\Unit1.cpp</Transaction>
-    <Transaction>2020/09/04 15:31:56.000.028,P:\Informatique et reseau\Code base 64\Base64.h=P:\Informatique et reseau\Code base 64\Unit1.h</Transaction>
-    <Transaction>2020/09/04 15:31:56.000.028,P:\Informatique et reseau\Code base 64\Base64.cpp=P:\Informatique et reseau\Code base 64\Unit1.cpp</Transaction>
-  </Transactions>
+    <Transaction>2020/09/04 15:31:56.000.028,P:\Informatique et reseau\Code base 64\Unit1.cpp=P:\Informatique et reseau\Code base 64\Base64.cpp</Transaction>
+    <Transaction>2020/09/04 15:31:56.000.028,P:\Informatique et reseau\Code base 64\Unit1.h=P:\Informatique et reseau\Code base 64\Base64.h</Transaction>
+  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Base64.cpp"/>
+    <File Path="Base64.cpp"/>
+    <File Path="Base64.h"/>
+    <File Path="File1.cpp"/>
+    <File Path="Project1PCH1.h"/>
+  </ProjectSortOrder>
 </BorlandProject>

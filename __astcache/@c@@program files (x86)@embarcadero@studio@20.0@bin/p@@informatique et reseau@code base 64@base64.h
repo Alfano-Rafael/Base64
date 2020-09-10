@@ -13,6 +13,7 @@ class Base64{
 		int IndiceCaractereBase64(char c);
 		void Decode4caracteresBase64(unsigned char* donnee, char* code);
 		void CodeNoctetsBase64(unsigned char* donnee, int nbOctetsDonnees, char* code);
+		int DecodeNoctetsBase64(unsigned char* donnee, char* code);
 
 	private:
 		int tableBase64[65];

@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 Base64::Base64(){
@@ -60,7 +61,7 @@ void Base64::Code3OctetsBase64(unsigned char* donnee, char*code){
 	int nb24bits,i;
 	nb24bits = (donnee[0] << 16)+(donnee[1] << 8) + donnee[2];
 	//nb24bit est la concatenation de tout les octets de donnee
-	AfficherBinaire(nb24bits, 24);
+	//AfficherBinaire(nb24bits, 24);
 	//afficher nb24bit
 	code[4] = '\0';
 	//caractere de fin de chaine 0
@@ -112,7 +113,7 @@ void Base64::Decode4caracteresBase64(unsigned char* donnee, char* code){
 	nb24bits = nb24bits>>=8;
 	donnee[0]= nb24bits & 0xff;
 
-	cout<<hex<<(int)donnee[0]<<" "<<(int)donnee[1]<<" "<<(int)donnee[2];
+    //cout << hex << (int)donnee[i] << " ";
 
 }
 
@@ -120,7 +121,7 @@ void Base64::CodeNoctetsBase64(unsigned char* donnee, int nbOctetsDonnees, char*
 
 	int resteEnFinDeSequence= (nbOctetsDonnees*8) %24 ;
 	//recuperer le nombre de bits retants apres le modulo de 3 octets
-	cout << resteEnFinDeSequence;
+	cout << "reste en fin de secance : "<<resteEnFinDeSequence<<endl;
 
 	if (resteEnFinDeSequence == 16) {
 		donnee[nbOctetsDonnees] = 0;
@@ -128,20 +129,41 @@ void Base64::CodeNoctetsBase64(unsigned char* donnee, int nbOctetsDonnees, char*
 	}
 	if (resteEnFinDeSequence == 8) {
 		donnee[nbOctetsDonnees] = 0;
-        nbOctetsDonnees++;
+		nbOctetsDonnees++;
 		donnee[nbOctetsDonnees] = 0;
 		nbOctetsDonnees++;
 	}
 
 	int j =0;
 
-	for (int i = 0; i <= nbOctetsDonnees ; i+=3) {
+	for (int i = 0; i < nbOctetsDonnees ; i+=3) {
 		Code3OctetsBase64(donnee+i, code+j);
 		j+=4;
 	}
 
+	if (resteEnFinDeSequence == 16) {
+	code[strlen(code)-1]='=';
+	}
+	if (resteEnFinDeSequence == 8) {
+	code[strlen(code)-1]='=';
+	code[strlen(code)-2]='=';
+	}
+	cout << "le code est" << code <<endl;
+}
 
-
+int Base64::DecodeNoctetsBase64(unsigned char* donnee, char* code){
+	int j = 0;
+	for (int i = 0; i < strlen(code); i+=4) {
+		Decode4caracteresBase64(donnee+j, code+i);
+		j+=3;
+	}
+	if (strlen(code)-1=='=') {
+		j--;
+	}
+	if (strlen(code)-2=='=') {
+		j--;
+	}
+    return j;
 }
 
 
